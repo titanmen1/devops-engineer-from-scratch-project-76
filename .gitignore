@@ -17,3 +17,6 @@ terraform/
 
 # Local artifacts
 local/
+
+# Docs
+docs/
