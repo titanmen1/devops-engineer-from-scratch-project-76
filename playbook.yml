@@ -17,3 +17,27 @@
     - name: Install Docker
       ansible.builtin.include_role:
         name: geerlingguy.docker
+
+- name: Deploy Redmine
+  hosts: all
+  become: true
+  tags:
+    - deploy
+  tasks:
+    - name: Create environment file from template
+      ansible.builtin.template:
+        src: environment.j2
+        dest: /opt/redmine.env
+        mode: "0640"
+
+    - name: Run Redmine container
+      community.docker.docker_container:
+        name: redmine-app
+        image: redmine:latest
+        published_ports:
+          - "{{ redmine_port }}:3000"
+        restart_policy: always
+        restart: true
+        pull: true
+        container_default_behavior: no_defaults
+        env_file: /opt/redmine.env

@@ -1,4 +1,7 @@
 ---
+# Внешний порт, на котором публикуется контейнер Redmine
+redmine_port: 3000
+
 # Установка pip и его модулей (роль geerlingguy.pip)
 pip_package: python3-pip
 pip_install_packages:
