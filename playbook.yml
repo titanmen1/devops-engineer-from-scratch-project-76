@@ -41,3 +41,11 @@
         pull: true
         container_default_behavior: no_defaults
         env_file: /opt/redmine.env
+
+- name: Setup monitoring
+  hosts: webservers
+  become: true
+  tags:
+    - monitoring
+  roles:
+    - role: datadog.datadog

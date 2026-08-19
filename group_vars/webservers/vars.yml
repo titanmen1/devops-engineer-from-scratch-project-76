@@ -7,3 +7,15 @@ db_name: "{{ vault_db_name }}"
 db_username: "{{ vault_db_username }}"
 db_password: "{{ vault_db_password }}"
 db_sslmode: "{{ vault_db_sslmode }}"
+
+# Мониторинг DataDog (роль datadog.datadog)
+datadog_api_key: "{{ vault_datadog_api_key }}"
+datadog_site: "datadoghq.com"
+datadog_checks:
+  http_check:
+    init_config:
+    instances:
+      - name: Redmine status
+        url: "http://localhost:{{ redmine_port }}"
+        timeout: 5
+        method: GET
