@@ -1,0 +1,19 @@
+---
+- name: Prepare servers
+  hosts: all
+  become: true
+  tags:
+    - setup
+  tasks:
+    - name: Update apt cache
+      ansible.builtin.apt:
+        update_cache: true
+      changed_when: false
+
+    - name: Install pip and its packages
+      ansible.builtin.include_role:
+        name: geerlingguy.pip
+
+    - name: Install Docker
+      ansible.builtin.include_role:
+        name: geerlingguy.docker
