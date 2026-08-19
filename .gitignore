@@ -1,0 +1,19 @@
+# Ansible
+roles/
+*.retry
+vault-password
+
+# Terraform (не коммитим по договорённости)
+terraform/
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+*.tfvars
+
+# IDE / OS
+.idea/
+.DS_Store
+
+# Local artifacts
+local/
