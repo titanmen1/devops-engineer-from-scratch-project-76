@@ -1,1 +1,8 @@
-REDMINE_SECRET_KEY_BASE={{ redmine_secret_key_base | default('changeme') }}
+REDMINE_DB_POSTGRES={{ db_host }}
+REDMINE_DB_PORT={{ db_port }}
+REDMINE_DB_DATABASE={{ db_name }}
+REDMINE_DB_USERNAME={{ db_username }}
+REDMINE_DB_PASSWORD={{ db_password }}
+{% if db_sslmode is defined %}
+REDMINE_DB_SSLMODE={{ db_sslmode }}
+{% endif %}
