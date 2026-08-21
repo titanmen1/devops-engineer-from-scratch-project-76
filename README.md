@@ -107,6 +107,20 @@ make all
 | `make encrypt-vault` | Зашифровать файл с секретами                          |
 | `make decrypt-vault` | Расшифровать файл с секретами                         |
 
+## Мониторинг (DataDog)
+
+Агент DataDog установлен на обоих серверах группы `webservers` и отправляет
+метрики. Настроен `http_check`, отслеживающий доступность Redmine.
+
+Оба хоста активны и шлют данные (Infrastructure → Hosts):
+
+![DataDog Hosts](assets/datadog-hosts.jpg)
+
+Метрика времени ответа `network.http.response_time` от `http_check` по обоим
+серверам (данные идут непрерывно):
+
+![DataDog http_check](assets/datadog-http-check.jpg)
+
 ## Ссылка на задеплоенное приложение
 
 Приложение развёрнуто и доступно по доменному имени (HTTP и HTTPS):
