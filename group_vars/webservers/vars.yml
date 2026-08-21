@@ -10,7 +10,7 @@ db_sslmode: "{{ vault_db_sslmode }}"
 
 # Мониторинг DataDog (роль datadog.datadog)
 datadog_api_key: "{{ vault_datadog_api_key }}"
-datadog_site: "datadoghq.com"
+datadog_site: "datadoghq.eu"
 datadog_checks:
   http_check:
     init_config:
