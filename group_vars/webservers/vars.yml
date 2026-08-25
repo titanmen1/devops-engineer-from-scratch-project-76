@@ -11,14 +11,5 @@ db_sslmode: "{{ vault_db_sslmode }}"
 # Общий для всех хостов ключ шифрования сессий Redmine
 secret_key_base: "{{ vault_secret_key_base }}"
 
-# Мониторинг DataDog (роль datadog.datadog)
+# Мониторинг DataDog (секретный ключ роли datadog.datadog)
 datadog_api_key: "{{ vault_datadog_api_key }}"
-datadog_site: "datadoghq.eu"
-datadog_checks:
-  http_check:
-    init_config:
-    instances:
-      - name: Redmine status
-        url: "http://localhost:{{ redmine_port }}"
-        timeout: 5
-        method: GET
