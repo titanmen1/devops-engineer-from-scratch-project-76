@@ -21,6 +21,7 @@
 - name: Deploy Redmine
   hosts: all
   become: true
+  serial: 1
   tags:
     - deploy
   tasks:
@@ -33,11 +34,10 @@
     - name: Run Redmine container
       community.docker.docker_container:
         name: redmine-app
-        image: redmine:latest
+        image: "redmine:{{ redmine_version }}"
         published_ports:
           - "{{ redmine_port }}:3000"
         restart_policy: always
-        restart: true
         pull: true
         container_default_behavior: no_defaults
         env_file: /opt/redmine.env
