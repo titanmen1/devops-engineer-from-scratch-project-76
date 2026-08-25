@@ -8,6 +8,9 @@ db_username: "{{ vault_db_username }}"
 db_password: "{{ vault_db_password }}"
 db_sslmode: "{{ vault_db_sslmode }}"
 
+# Общий для всех хостов ключ шифрования сессий Redmine
+secret_key_base: "{{ vault_secret_key_base }}"
+
 # Мониторинг DataDog (роль datadog.datadog)
 datadog_api_key: "{{ vault_datadog_api_key }}"
 datadog_site: "datadoghq.eu"

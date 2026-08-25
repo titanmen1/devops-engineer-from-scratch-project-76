@@ -62,6 +62,7 @@ terraform apply
    vault_db_password: <пароль от БД>
    vault_db_sslmode: require
    vault_datadog_api_key: <API-ключ DataDog>
+   vault_secret_key_base: <секретный ключ, openssl rand -hex 64>
    ```
 
 ## Развёртывание
