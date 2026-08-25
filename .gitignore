@@ -3,13 +3,14 @@ roles/
 *.retry
 vault-password
 
-# Terraform (не коммитим по договорённости)
-terraform/
+# Terraform (.tf конфиги коммитим, state и tfvars — нет)
 *.tfstate
 *.tfstate.*
 .terraform/
 .terraform.lock.hcl
 *.tfvars
+tfplan
+terraform/.terraform/
 
 # IDE / OS
 .idea/

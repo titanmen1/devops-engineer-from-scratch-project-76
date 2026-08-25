@@ -17,8 +17,8 @@ Yandex Cloud с помощью Ansible: две виртуальные машин
 ## Инфраструктура
 
 Инфраструктура (2 ВМ, VPC security groups, ALB, кластер Managed PostgreSQL)
-описана в Terraform (каталог `terraform/`, в репозиторий не коммитится).
-Создаётся командами:
+описана в Terraform (каталог `terraform/`). Конфигурация `.tf` коммитится
+в репозиторий; state и `terraform.tfvars` — нет. Создаётся командами:
 
 ```bash
 cd terraform
